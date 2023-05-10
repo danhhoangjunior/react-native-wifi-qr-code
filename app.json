@@ -16,17 +16,39 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "entitlements": {
+        "com.apple.developer.networking.wifi-info": true
+      },
+      "bundleIdentifier": "wwifi.com.vn"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [
+        "android.permission.ACCESS_FINE_LOCATION"
+      ],
+      "package": "wwifi.com.vn"
     },
     "web": {
       "bundler": "metro",
       "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "react-native-wifi-reborn",
+      [
+        "expo-barcode-scanner",
+        {
+          "cameraPermission": "Allow $(PRODUCT_NAME) to access camera."
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "0abc8216-a367-4096-be0b-f46b189116a6"
+      }
     }
   }
 }
